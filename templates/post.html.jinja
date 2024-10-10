@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}Blog post: {{ post.title }}{% endblock %}
+
+{% block main %}
+<h1>{{ post.title }}</h1>
+{% if escape %}
+	{{ post.content }}
+{% else %}
+	{% autoescape false %}
+	{{ post.content }}
+	{% endautoescape %}
+{% endif %}
+
+{% endblock %}
